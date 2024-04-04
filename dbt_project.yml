@@ -1,6 +1,5 @@
 name: "deel_takehome"
-profile: "deel_takehome" #for the takehome task no additions are needed
-
+profile: "deel_takehome"
 
 tests:
  deel_takehome:
