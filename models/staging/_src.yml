@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: deel_inputs
+    database: deel_takehome_db
+    schema: provided_data
+    tables:
+      - name: organizations
+      - name: invoices

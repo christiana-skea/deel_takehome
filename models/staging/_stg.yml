@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: stg_organizations
+    columns:
+      - name: organization_id
+        tests:
+          - unique
+          - not_null
+      - name: legal_entity_country_code
+      - name: count_total_contracts_active
+      - name: last_payment_date
+      - name: first_payment_date
+      - name: created_at
+
+  - name: stg_invoices
+    columns:
+      - name: invoice_id
+        tests:
+          - unique
+          - not_null
+      - name: parent_invoice_id
+      - name: transaction_id
+      - name: organization_id
+        tests:
+          - relationships:
+              to: ref('stg_organizations')
+              field: organization_id
+      - name: type
+      - name: status
+      - name: currency
+      - name: payment_currency
+      - name: payment_method
+      - name: amount
+      - name: payment_amount
+      - name: fx_rate
+      - name: fx_rate_payment

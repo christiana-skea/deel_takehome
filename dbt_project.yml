@@ -1,0 +1,8 @@
+name: "deel_takehome"
+profile: "deel_takehome" #for the takehome task no additions are needed
+
+
+tests:
+ deel_takehome:
+  staging:
+    +severity: warn

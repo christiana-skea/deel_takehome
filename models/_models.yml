@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: dim_organizations
+    columns:
+      - name: organization_id
+        tests:
+          - unique
+      - name: legal_entity_country_code
+      - name: last_payment_date
+      - name: first_payment_date
+      - name: created_at
+  
+  - name: fct_organization_balances
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - organization_id
+            - date
+    columns:
+      - name: organization_id
+      - name: date
+      - name: total_invoices_amount_usd
